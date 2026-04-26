@@ -1,0 +1,188 @@
+:root {
+    --bg: #0f172a;
+    --panel: rgba(30, 41, 59, 0.7);
+    --accent: #8b5cf6;
+    --accent-glow: rgba(139, 92, 246, 0.3);
+    --text: #f8fafc;
+    --text-dim: #94a3b8;
+    --border: rgba(255, 255, 255, 0.06);
+    --node-bg: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.studio-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 10%, #1e1b4b 0%, var(--bg) 80%);
+}
+
+/* Header */
+.studio-header {
+    height: 70px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 
+        1px solid var(--border);
+    z-index: 100;
+}
+
+.brand { display: flex; align-items: center; gap: 1rem; }
+.logo-box svg { width: 32px; height: 32px; fill: none; stroke: var(--accent); stroke-width: 2; }
+.brand h1 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; }
+
+.header-actions { display: flex; align-items: center; gap: 2rem; }
+.sync-status { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+.dot.pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent-glow); animation: pulse 2s infinite; }
+
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+.deploy-btn { 
+    background: var(--accent); 
+    color: white; 
+    border: none; 
+    padding: 0.6rem 1.2rem; 
+    border-radius: 8px; 
+    font-weight: 700; 
+    font-size: 0.8rem; 
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.deploy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 15px var(--accent-glow); }
+
+/* Workspace */
+.workspace {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Connector Panel */
+.connector-panel {
+    width: 280px;
+    background: rgba(15, 23, 42, 0.5);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.panel-header { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-dim); margin-bottom: 1.5rem; letter-spacing: 1px; }
+
+.connector-list { display: flex; flex-direction: column; gap: 0.75rem; flex: 1; }
+.connector-item {
+    background: var(--node-bg);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: grab;
+    transition: all 0.2s;
+}
+.connector-item:hover { border-color: var(--accent); background: rgba(139, 92, 246, 0.05); }
+
+.icon { 
+    width: 24px; height: 24px; 
+    border-radius: 6px; 
+    display: flex; align-items: center; justify-content: center; 
+    font-weight: 900; font-size: 0.8rem;
+    color: white;
+}
+.icon.stripe { background: #635bff; }
+.icon.shopify { background: #95bf47; }
+.icon.discord { background: #5865f2; }
+.icon.gmail { background: #ea4335; }
+.icon.slack { background: #4a154b; }
+
+.guide-text { font-size: 0.7rem; color: var(--text-dim); line-height: 1.5; margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+
+/* Canvas Stage */
+.canvas-stage {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.stage-overlay {
+    position: absolute;
+    top: 1.5rem; left: 1.5rem; right: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+}
+.coord-info { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--text-dim); background: rgba(0,0,0,0.3); padding: 0.4rem 0.8rem; border-radius: 4px; }
+.zoom-controls { pointer-events: auto; background: rgba(0,0,0,0.3); border-radius: 6px; display: flex; border: 1px solid var(--border); }
+.zoom-controls button { background: transparent; border: none; color: #fff; padding: 0.5rem 0.8rem; cursor: pointer; }
+.zoom-controls span { align-self: center; font-size: 0.7rem; padding: 0 0.5rem; color: var(--text-dim); border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+
+.canvas-wrapper { width: 100%; height: 100%; position: relative; cursor: crosshair; }
+#linkCanvas { position: absolute; inset: 0; pointer-events: none; }
+.nodes-container { position: absolute; inset: 0; pointer-events: none; }
+
+/* Node UI */
+.node {
+    position: absolute;
+    width: 200px;
+    background: var(--node-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    pointer-events: auto;
+    cursor: move;
+    z-index: 5;
+}
+.node:hover { border-color: rgba(255,255,255,0.2); }
+.node.active { border-color: var(--accent); box-shadow: 0 0 20px var(--accent-glow); }
+
+.node-header { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; font-weight: 700; }
+.node-body { padding: 1rem; font-size: 0.7rem; color: var(--text-dim); }
+
+.node-ports { position: absolute; inset: 0; pointer-events: none; }
+.port { 
+    position: absolute; 
+    width: 10px; height: 10px; 
+    background: var(--bg); 
+    border: 2px solid var(--accent); 
+    border-radius: 50%; 
+    pointer-events: auto;
+    cursor: crosshair;
+}
+.port.input { left: -6px; top: 50%; transform: translateY(-50%); }
+.port.output { right: -6px; top: 50%; transform: translateY(-50%); }
+
+/* Activity Bar */
+.activity-bar {
+    height: 60px;
+    background: #000;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    gap: 2rem;
+}
+
+.log-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--accent); font-weight: 700; white-space: nowrap; }
+.log-entries { flex: 1; overflow: hidden; display: flex; }
+.log-item { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-dim); white-space: nowrap; }
+.log-item.system { color: #fff; }
+.log-item.sync { color: var(--accent); font-weight: 600; }

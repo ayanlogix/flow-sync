@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow-Sync | Visual Automation Orchestrator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230f172a%22/><circle cx=%2230%22 cy=%2250%22 r=%2210%22 fill=%22%238b5cf6%22/><circle cx=%2270%22 cy=%2250%22 r=%2210%22 fill=%22%238b5cf6%22/><path d=%22M30 50Q50 30 70 50%22 stroke=%22%238b5cf6%22 stroke-width=%224%22 fill=%22none%22/></svg>">
+</head>
+<body>
+    <div class="studio-container">
+        <!-- Top Navigation -->
+        <header class="studio-header">
+            <div class="brand">
+                <div class="logo-box">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                </div>
+                <h1>Flow-Sync</h1>
+            </div>
+            <div class="header-actions">
+                <div class="sync-status">
+                    <span class="dot pulse"></span>
+                    ACTIVE_SYHCHRONIZER
+                </div>
+                <button class="deploy-btn">Deploy Automation</button>
+            </div>
+        </header>
+
+        <main class="workspace">
+            <!-- Sidebar: Connectors Library -->
+            <aside class="connector-panel">
+                <div class="panel-header">APP_CONNECTORS</div>
+                <div class="connector-list">
+                    <div class="connector-item" draggable="true" data-type="trigger">
+                        <div class="icon stripe">S</div>
+                        <span>Stripe Trigger</span>
+                    </div>
+                    <div class="connector-item" draggable="true" data-type="trigger">
+                        <div class="icon shopify">Sh</div>
+                        <span>Shopify Order</span>
+                    </div>
+                    <div class="connector-item" draggable="true" data-type="action">
+                        <div class="icon discord">D</div>
+                        <span>Discord Notify</span>
+                    </div>
+                    <div class="connector-item" draggable="true" data-type="action">
+                        <div class="icon gmail">G</div>
+                        <span>Gmail Send</span>
+                    </div>
+                    <div class="connector-item" draggable="true" data-type="action">
+                        <div class="icon slack">Sl</div>
+                        <span>Slack Message</span>
+                    </div>
+                </div>
+                <div class="guide-text">Drag connectors onto the canvas to build a workflow.</div>
+            </aside>
+
+            <!-- Center: Node Workspace -->
+            <section class="canvas-stage">
+                <div class="stage-overlay">
+                    <div class="coord-info">X: 124.0 / Y: 562.8</div>
+                    <div class="zoom-controls">
+                        <button>+</button>
+                        <span>100%</span>
+                        <button>-</button>
+                    </div>
+                </div>
+                <div id="nodeCanvasWrapper" class="canvas-wrapper">
+                    <canvas id="linkCanvas"></canvas>
+                    <div id="nodesContainer" class="nodes-container">
+                        <!-- Dynamic Nodes -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Activity Log -->
+        <footer class="activity-bar">
+            <div class="log-label">EXECUTION_SEQUENCE</div>
+            <div id="executionLog" class="log-entries">
+                <div class="log-item system">Orchestrator online. Awaiting trigger event.</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
