@@ -16,27 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const nodeTypes = {
         stripe: { 
             name: "Stripe Event", 
-            icon: `<img src="https://www.vectorlogo.zone/logos/stripe/stripe-icon.png" alt="Stripe">`, 
+            icon: `<img src="https://logo.clearbit.com/stripe.com" onerror="this.src='https://www.svgrepo.com/show/354395/stripe.svg'" alt="Stripe">`, 
             color: "#635bff", desc: "Listen for new webhooks" 
         },
         shopify: { 
             name: "Shopify Order", 
-            icon: `<img src="https://www.vectorlogo.zone/logos/shopify/shopify-icon.png" alt="Shopify">`, 
+            icon: `<img src="https://logo.clearbit.com/shopify.com" onerror="this.src='https://www.svgrepo.com/show/354354/shopify.svg'" alt="Shopify">`, 
             color: "#95bf47", desc: "Trigger on successful sale" 
         },
         discord: { 
             name: "Discord Bot", 
-            icon: `<img src="https://www.vectorlogo.zone/logos/discordapp/discordapp-icon.png" alt="Discord">`, 
+            icon: `<img src="https://logo.clearbit.com/discord.com" onerror="this.src='https://www.svgrepo.com/show/353655/discord-icon.svg'" alt="Discord">`, 
             color: "#5865f2", desc: "Post to channel #general" 
         },
         gmail: { 
             name: "Gmail API", 
-            icon: `<img src="https://www.vectorlogo.zone/logos/google_gmail/google_gmail-icon.png" alt="Gmail">`, 
+            icon: `<img src="https://logo.clearbit.com/gmail.com" onerror="this.src='https://www.svgrepo.com/show/353823/google-gmail.svg'" alt="Gmail">`, 
             color: "#ea4335", desc: "Send summary email" 
         },
         slack: { 
             name: "Slack Connect", 
-            icon: `<img src="https://www.vectorlogo.zone/logos/slack/slack-icon.png" alt="Slack">`, 
+            icon: `<img src="https://logo.clearbit.com/slack.com" onerror="this.src='https://www.svgrepo.com/show/354359/slack-icon.svg'" alt="Slack">`, 
             color: "#4a154b", desc: "Ping engineering team" 
         }
     };
