@@ -1,7 +1,7 @@
 # Flow-Sync | Visual Automation Orchestrator
 
-![Flow-Sync Preview](https://img.shields.io/badge/Ayanlogix-Automation-blueviolet?style=for-the-badge)
-![Private](https://img.shields.io/badge/Status-Private-red?style=for-the-badge)
+![Operational](https://img.shields.io/badge/Status-Operational-brightgreen?style=for-the-badge)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-blue?style=for-the-badge)](https://ayanlogix.github.io/flow-sync/)
 
 **Flow-Sync** is a professional-grade visual automation orchestrator that allows users to build, manage, and deploy complex workflows using a node-based interface. It streamlines integration between various platforms like Stripe, Shopify, Discord, and Gmail.
 
