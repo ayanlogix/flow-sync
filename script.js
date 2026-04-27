@@ -220,10 +220,46 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => activeSync = false, 2000);
     };
 
-    setInterval(triggerSync, 5000);
+    // 6. Deploy & Zoom Engine
+    const deployBtn = document.querySelector('.deploy-btn');
+    const zoomIn = document.querySelectorAll('.zoom-controls button')[0];
+    const zoomOut = document.querySelectorAll('.zoom-controls button')[1];
+    const zoomText = document.querySelector('.zoom-controls span');
+    
+    let currentZoom = 1;
+
+    deployBtn.addEventListener('click', () => {
+        if (nodes.length < 2) {
+            addLog('DEPLOY_ERROR: At least 2 nodes required for sync', 'system');
+            return;
+        }
+        deployBtn.innerText = 'Deploying...';
+        deployBtn.style.opacity = '0.7';
+        
+        setTimeout(() => {
+            triggerSync();
+            addLog('DEPLOY_SUCCESS: Automation live on 8 production nodes', 'sync');
+            deployBtn.innerText = 'Deploy Automation';
+            deployBtn.style.opacity = '1';
+            
+            // Visual feedback
+            nodesContainer.style.boxShadow = '0 0 50px var(--accent-glow)';
+            setTimeout(() => nodesContainer.style.boxShadow = 'none', 1000);
+        }, 1200);
+    });
+
+    const updateZoom = (delta) => {
+        currentZoom = Math.min(Math.max(0.5, currentZoom + delta), 1.5);
+        nodesContainer.style.transform = `scale(${currentZoom})`;
+        linkCanvas.style.transform = `scale(${currentZoom})`;
+        zoomText.innerText = `${Math.round(currentZoom * 100)}%`;
+    };
+
+    zoomIn.addEventListener('click', () => updateZoom(0.1));
+    zoomOut.addEventListener('click', () => updateZoom(-0.1));
 
     // Initial Layout
-    createNode('stripe', 100, 150);
+    createNode('stripe', 150, 150);
     createNode('discord', 450, 150);
     
     requestAnimationFrame(render);
