@@ -1,8 +1,8 @@
 # 🔗 Flow-Sync | Visual Automation Orchestrator
 
 ![Status](https://img.shields.io/badge/STATUS-OPERATIONAL-success?style=for-the-badge&logo=statuspage)
-![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)
-![Tech](https://img.shields.io/badge/TECH-VANILLA_JS-yellow?style=for-the-badge&logo=javascript)
+![Deployment](https://img.shields.io/badge/DEPLOYMENT-ACTIVE-blue?style=for-the-badge&logo=vercel)
+![License](https://img.shields.io/badge/LICENSE-MIT-blueviolet?style=for-the-badge)
 
 **Flow-Sync** is a high-performance, node-based visual workspace designed for architecting complex API automation workflows. Built with a focus on low-latency interactions and enterprise-grade visual feedback.
 
