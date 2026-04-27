@@ -1,39 +1,66 @@
-# Flow-Sync | Visual Automation Orchestrator
+# 🔗 Flow-Sync | Visual Automation Orchestrator
 
-![Operational](https://img.shields.io/badge/Status-Operational-brightgreen?style=for-the-badge)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-blue?style=for-the-badge)](https://ayanlogix.github.io/flow-sync/)
+![Status](https://img.shields.io/badge/STATUS-OPERATIONAL-success?style=for-the-badge&logo=statuspage)
+![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)
+![Tech](https://img.shields.io/badge/TECH-VANILLA_JS-yellow?style=for-the-badge&logo=javascript)
 
-**Flow-Sync** is a professional-grade visual automation orchestrator that allows users to build, manage, and deploy complex workflows using a node-based interface. It streamlines integration between various platforms like Stripe, Shopify, Discord, and Gmail.
+**Flow-Sync** is a high-performance, node-based visual workspace designed for architecting complex API automation workflows. Built with a focus on low-latency interactions and enterprise-grade visual feedback.
 
-## 🚀 Key Features
-- **Visual Node Canvas**: Drag-and-drop workspace for building intricate automation flows.
-- **Connector Library**: Pre-built connectors for popular services (Stripe, Shopify, Discord, Gmail, Slack).
-- **Real-Time Execution Logs**: Live monitoring of workflow execution sequences and system events.
-- **Synchronized Deployment**: One-click deployment system for active orchestrators.
-- **Spatial UI**: Advanced canvas navigation with zoom controls and coordinate tracking.
+[🚀 LIVE DEMO](https://ayanlogix.github.io/flow-sync/) | [🌐 Portfolio](https://ayanlogix.dev)
 
-## 🛠️ Technical Stack
-- **Frontend**: Vanilla JavaScript (ES6+), HTML5, CSS3
-- **Graphics**: Canvas API for dynamic node linking and path rendering
-- **Logic**: Drag-and-drop API integration with custom event-driven workflow engine
-- **Typography**: IBM Plex Mono & Outfit for a technical, modern aesthetic
+---
 
-## 📁 Project Structure
-```bash
-flow-sync/
-├── public/
-│   ├── index.html   # Studio UI
-│   ├── style.css    # Workspace & node styling
-│   └── script.js    # Canvas logic & node orchestration
-└── README.md        # Documentation
-```
+## 🧠 Core Architecture
 
-## 📋 Installation
+Flow-Sync moves beyond simple "drag-and-drop" builders by implementing a custom **Graph Orchestration Layer**.
+
+### Key Technical Pillars:
+*   **Dynamic Node Engine**: A modular system allowing for rapid deployment of new "Connectors" (Stripe, Shopify, Discord, etc.) with pre-configured API triggers.
+*   **Bezier Link Logic**: Custom mathematical implementation for real-time visual data-paths between automation nodes.
+*   **Enterprise Logo Engine**: Integrated with the **Clearbit CDN** for high-fidelity brand identification, featuring an automated fallback safety system for 100% visual uptime.
+*   **Glassmorphic UI/UX**: Designed for modern dark-mode studios with a focus on "Studio-Grade" aesthetics.
+
+---
+
+## 🛠️ Tech Stack
+
+*   **Engine**: Vanilla JavaScript (ES6+) for maximum performance and zero dependency overhead.
+*   **UI/UX**: Custom CSS3 with advanced Glassmorphism and CSS Grid/Flex orchestration.
+*   **Assets**: Enterprise-grade SVG icons and Clearbit Logo API integration.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+*   A modern web browser (Chrome, Firefox, Edge, or Safari).
+*   Zero external dependencies required.
+
+### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/ayanlogix/flow-sync.git
    ```
-2. Open `public/index.html` in your browser.
+2. Navigate to the project directory:
+   ```bash
+   cd flow-sync
+   ```
+3. Open `index.html` in your browser.
 
 ---
-*Developed by **Ayan Hussain (Ayanlogix)** - Synchronizing the workflow.*
+
+## 🗺️ Roadmap
+- [ ] **State Persistence**: LocalStorage integration for saving complex flow architectures.
+- [ ] **AI-Logic Nodes**: Symbolic reasoning nodes for decision-tree branching.
+- [ ] **Export Engine**: Generate JSON configurations for n8n or Zapier directly from the workspace.
+
+---
+
+## 🤝 Contributing
+We welcome contributions to the Flow-Sync engine! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+**Crafted with precision by [Ayan Hussain](https://ayanlogix.dev)**
