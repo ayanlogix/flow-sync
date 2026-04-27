@@ -134,14 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
         dragNode = null;
     });
 
-    // Sidebar Drag (Simulated)
+    // Sidebar Click Spawning
     sidebarItems.forEach(item => {
         item.addEventListener('click', () => {
-            const type = item.dataset.type === 'trigger' ? 
-                (Math.random() > 0.5 ? 'stripe' : 'shopify') : 
-                (Math.random() > 0.6 ? 'discord' : (Math.random() > 0.5 ? 'gmail' : 'slack'));
-            createNode(type, 100 + Math.random() * 200, 100 + Math.random() * 200);
-            addLog(`Node added: ${type.toUpperCase()}`, 'system');
+            const type = item.getAttribute('data-node-type');
+            if (nodeTypes[type]) {
+                createNode(type, 150 + Math.random() * 100, 150 + Math.random() * 100);
+                addLog(`Orchestrator: Initialized ${type.toUpperCase()} node`, 'system');
+            }
         });
     });
 
