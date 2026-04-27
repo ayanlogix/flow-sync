@@ -16,27 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const nodeTypes = {
         stripe: { 
             name: "Stripe Event", 
-            icon: `<img src="https://logo.clearbit.com/stripe.com" onerror="this.src='https://www.svgrepo.com/show/354395/stripe.svg'" alt="Stripe">`, 
+            icon: `<img src="https://cdn.simpleicons.org/stripe/635bff" alt="Stripe">`, 
             color: "#635bff", desc: "Listen for new webhooks" 
         },
         shopify: { 
             name: "Shopify Order", 
-            icon: `<img src="https://logo.clearbit.com/shopify.com" onerror="this.src='https://www.svgrepo.com/show/354354/shopify.svg'" alt="Shopify">`, 
+            icon: `<img src="https://cdn.simpleicons.org/shopify/95bf47" alt="Shopify">`, 
             color: "#95bf47", desc: "Trigger on successful sale" 
         },
         discord: { 
             name: "Discord Bot", 
-            icon: `<img src="https://logo.clearbit.com/discord.com" onerror="this.src='https://www.svgrepo.com/show/353655/discord-icon.svg'" alt="Discord">`, 
+            icon: `<img src="https://cdn.simpleicons.org/discord/5865f2" alt="Discord">`, 
             color: "#5865f2", desc: "Post to channel #general" 
         },
         gmail: { 
             name: "Gmail API", 
-            icon: `<img src="https://logo.clearbit.com/gmail.com" onerror="this.src='https://www.svgrepo.com/show/353823/google-gmail.svg'" alt="Gmail">`, 
+            icon: `<img src="https://cdn.simpleicons.org/gmail/ea4335" alt="Gmail">`, 
             color: "#ea4335", desc: "Send summary email" 
         },
         slack: { 
             name: "Slack Connect", 
-            icon: `<img src="https://logo.clearbit.com/slack.com" onerror="this.src='https://www.svgrepo.com/show/354359/slack-icon.svg'" alt="Slack">`, 
+            icon: `<img src="https://cdn.simpleicons.org/slack/4a154b" alt="Slack">`, 
             color: "#4a154b", desc: "Ping engineering team" 
         }
     };
@@ -110,10 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const render = () => {
+    const resizeCanvas = () => {
         const wrapper = document.getElementById('nodeCanvasWrapper');
-        linkCanvas.width = wrapper.clientWidth;
-        linkCanvas.height = wrapper.clientHeight;
+        if (wrapper) {
+            linkCanvas.width = wrapper.clientWidth;
+            linkCanvas.height = wrapper.clientHeight;
+        }
+    };
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const render = () => {
         ctx.clearRect(0, 0, linkCanvas.width, linkCanvas.height);
 
         connections.forEach(conn => {
@@ -259,8 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
     zoomOut.addEventListener('click', () => updateZoom(-0.1));
 
     // Initial Layout
-    createNode('stripe', 150, 150);
-    createNode('discord', 450, 150);
+    createNode('stripe', 100, 150);
+    createNode('discord', 400, 150);
     
     requestAnimationFrame(render);
 });
