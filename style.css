@@ -101,17 +101,17 @@ body {
 .connector-item:hover { border-color: var(--accent); background: rgba(139, 92, 246, 0.05); }
 
 .icon { 
-    width: 24px; height: 24px; 
+    width: 28px; height: 28px; 
     border-radius: 6px; 
     display: flex; align-items: center; justify-content: center; 
-    font-weight: 900; font-size: 0.8rem;
-    color: white;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
 }
-.icon.stripe { background: #635bff; }
-.icon.shopify { background: #95bf47; }
-.icon.discord { background: #5865f2; }
-.icon.gmail { background: #ea4335; }
-.icon.slack { background: #4a154b; }
+.icon img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
 
 .guide-text { font-size: 0.7rem; color: var(--text-dim); line-height: 1.5; margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem; }
 
